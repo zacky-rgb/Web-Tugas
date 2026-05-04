@@ -112,3 +112,220 @@ function toggleInfo() {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas IPA - Tata Surya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      color: #00d4ff;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #00d4ff;
+      color: black;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #00aacc;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Tata Surya</h1>
+
+  <p><b>Nama:</b> Zacky</p>
+  <p><b>Kelas:</b> 8</p>
+
+  <h2>Penjelasan</h2>
+  <p>
+    Tata surya adalah sistem yang terdiri dari Matahari sebagai pusat dan
+    benda-benda langit seperti planet yang mengelilinginya.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg">
+
+  <h2>Kesimpulan</h2>
+  <p>
+    Tata surya menunjukkan keteraturan pergerakan benda langit yang dipengaruhi gravitasi.
+  </p>
+
+  <button onclick="toggleInfo()">Klik untuk Fakta Menarik 🚀</button>
+
+  <p id="fakta" class="hidden">
+    Satu hari di Venus lebih lama daripada satu tahunnya!
+  </p>
+
+</div>
+
+<script>
+function toggleInfo() {
+  var x = document.getElementById("fakta");
+  if (x.style.display === "none" || x.style.display === "") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas IPA - Tata Surya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      color: #00d4ff;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #00d4ff;
+      color: black;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #00aacc;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Tata Surya</h1>
+
+  <p><b>Nama:</b> Zacky</p>
+  <p><b>Kelas:</b> 8</p>
+
+  <h2>Penjelasan</h2>
+  <p>
+    Tata surya adalah sistem yang terdiri dari Matahari sebagai pusat dan
+    benda-benda langit seperti planet yang mengelilinginya.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg">
+
+  <h2>Kesimpulan</h2>
+  <p>
+    Tata surya menunjukkan keteraturan pergerakan benda langit yang dipengaruhi gravitasi.
+  </p>
+
+  <button onclick="toggleInfo()">Klik untuk Fakta Menarik 🚀</button>
+
+  <p id="fakta" class="hidden">
+    Satu hari di Venus lebih lama daripada satu tahunnya!
+  </p>
+
+</div>
+
+<script>
+function toggleInfo() {
+  var x = document.getElementById("fakta");
+  if (x.style.display === "none" || x.style.display === "") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
