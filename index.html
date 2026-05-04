@@ -1,331 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tugas ipa - Zacky</title>
+  <title>Zacky Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: linear-gradient(to right, #74ebd5, #ACB6E5);
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #334155;
+    }
+
+    nav a {
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background: #475569;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+    }
+
+    .hero p {
+      color: #94a3b8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
     }
 
     .container {
-      max-width: 800px;
-      margin: 30px auto;
-      background: white;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: #1e293b;
       padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      border-radius: 10px;
     }
 
-    h1 {
+    footer {
       text-align: center;
-      color: #2c3e50;
-    }
-
-    h2 {
-      color: #2980b9;
+      padding: 15px;
+      background: #1e293b;
       margin-top: 20px;
     }
-
-    p {
-      line-height: 1.6;
-    }
-
-    .profile {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .profile img {
-      width: 120px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-
-    button {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 20px;
-      background: #2980b9;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #1f5f8a;
-    }
-
-    .hidden {
-      display: none;
-      margin-top: 10px;
-      color: #555;
-    }
   </style>
 </head>
 
 <body>
 
+<header>
+  Website Zacky 😎
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Tentang</a>
+  <a href="#">Kontak</a>
+</nav>
+
+<section class="hero">
+  <h1>Halo 👋</h1>
+  <p>Selamat datang di website pertamaku</p>
+  <a class="btn" href="#">Klik Aku</a>
+</section>
+
 <div class="container">
 
-  <h1>Kerajaan Kutai</h1>
-
-  <div class="profile">
-    <img src="https://via.placeholder.com/120" alt="foto">
-    <p><b>Nama:</b> Zacky</p>
-    <p><b>Kelas:</b> 8</p>
+  <div class="card">
+    <h2>Tentang Aku</h2>
+    <p>Aku Zacky, lagi belajar bikin website pakai GitHub Pages 🔥</p>
   </div>
 
-  <h2>Penjelasan</h2>
-  <p>
-    Kerajaan Kutai adalah kerajaan Hindu tertua di Indonesia yang terletak di Kalimantan Timur.
-    Kerajaan ini dikenal melalui prasasti Yupa.
-  </p>
-
-  <h2>Kesimpulan</h2>
-  <p>
-    Kutai memiliki peran penting dalam sejarah perkembangan agama Hindu di Indonesia.
-  </p>
-
-  <button onclick="toggleInfo()">Tampilkan Fakta Menarik</button>
-
-  <p id="fakta" class="hidden">
-    Raja terkenal Kutai adalah Mulawarman yang dikenal dermawan kepada rakyatnya.
-  </p>
+  <div class="card">
+    <h2>Project</h2>
+    <p>Ini adalah website pertamaku. Nanti bakal aku upgrade jadi lebih keren 😎</p>
+  </div>
 
 </div>
 
-<script>
-function toggleInfo() {
-  var x = document.getElementById("fakta");
-  if (x.style.display === "none" || x.style.display === "") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
+<footer>
+  © 2026 Zacky
+</footer>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Tugas IPA - Tata Surya</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: white;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      animation: fadeIn 1s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    h2 {
-      color: #00d4ff;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 15px;
-      margin-top: 10px;
-    }
-
-    button {
-      display: block;
-      margin: 20px auto;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      background: #00d4ff;
-      color: black;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.1);
-      background: #00aacc;
-    }
-
-    .hidden {
-      display: none;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <h1>Tata Surya</h1>
-
-  <p><b>Nama:</b> Zacky</p>
-  <p><b>Kelas:</b> 8</p>
-
-  <h2>Penjelasan</h2>
-  <p>
-    Tata surya adalah sistem yang terdiri dari Matahari sebagai pusat dan
-    benda-benda langit seperti planet yang mengelilinginya.
-  </p>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg">
-
-  <h2>Kesimpulan</h2>
-  <p>
-    Tata surya menunjukkan keteraturan pergerakan benda langit yang dipengaruhi gravitasi.
-  </p>
-
-  <button onclick="toggleInfo()">Klik untuk Fakta Menarik 🚀</button>
-
-  <p id="fakta" class="hidden">
-    Satu hari di Venus lebih lama daripada satu tahunnya!
-  </p>
-
+<div class="card">
+  <h2>Rotasi Bumi</h2>
+  <p>Rotasi bumi adalah perputaran bumi pada porosnya yang menyebabkan siang dan malam.</p>
 </div>
 
-<script>
-function toggleInfo() {
-  var x = document.getElementById("fakta");
-  if (x.style.display === "none" || x.style.display === "") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-  <title>Tugas IPA - Tata Surya</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: white;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      animation: fadeIn 1s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    h2 {
-      color: #00d4ff;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 15px;
-      margin-top: 10px;
-    }
-
-    button {
-      display: block;
-      margin: 20px auto;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      background: #00d4ff;
-      color: black;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.1);
-      background: #00aacc;
-    }
-
-    .hidden {
-      display: none;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <h1>Tata Surya</h1>
-
-  <p><b>Nama:</b> Zacky</p>
-  <p><b>Kelas:</b> 8</p>
-
-  <h2>Penjelasan</h2>
-  <p>
-    Tata surya adalah sistem yang terdiri dari Matahari sebagai pusat dan
-    benda-benda langit seperti planet yang mengelilinginya.
-  </p>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg">
-
-  <h2>Kesimpulan</h2>
-  <p>
-    Tata surya menunjukkan keteraturan pergerakan benda langit yang dipengaruhi gravitasi.
-  </p>
-
-  <button onclick="toggleInfo()">Klik untuk Fakta Menarik 🚀</button>
-
-  <p id="fakta" class="hidden">
-    Satu hari di Venus lebih lama daripada satu tahunnya!
-  </p>
-
+<div class="card">
+  <h2>Revolusi Bumi</h2>
+  <p>Revolusi bumi adalah pergerakan bumi mengelilingi matahari yang menyebabkan pergantian musim.</p>
 </div>
-
-<script>
-function toggleInfo() {
-  var x = document.getElementById("fakta");
-  if (x.style.display === "none" || x.style.display === "") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-
-</body>
-</html>
