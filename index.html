@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas ipa - Zacky</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #2980b9;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1f5f8a;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Kerajaan Kutai</h1>
+
+  <div class="profile">
+    <img src="https://via.placeholder.com/120" alt="foto">
+    <p><b>Nama:</b> Zacky</p>
+    <p><b>Kelas:</b> 8</p>
+  </div>
+
+  <h2>Penjelasan</h2>
+  <p>
+    Kerajaan Kutai adalah kerajaan Hindu tertua di Indonesia yang terletak di Kalimantan Timur.
+    Kerajaan ini dikenal melalui prasasti Yupa.
+  </p>
+
+  <h2>Kesimpulan</h2>
+  <p>
+    Kutai memiliki peran penting dalam sejarah perkembangan agama Hindu di Indonesia.
+  </p>
+
+  <button onclick="toggleInfo()">Tampilkan Fakta Menarik</button>
+
+  <p id="fakta" class="hidden">
+    Raja terkenal Kutai adalah Mulawarman yang dikenal dermawan kepada rakyatnya.
+  </p>
+
+</div>
+
+<script>
+function toggleInfo() {
+  var x = document.getElementById("fakta");
+  if (x.style.display === "none" || x.style.display === "") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
