@@ -17,18 +17,69 @@
       scroll-behavior:smooth;
     }
 
-    /* 🌙 Moon */
-    .moon{
-      position:fixed;
-      top:70px;
-      right:50px;
-      width:110px;
-      height:110px;
-      border-radius:50%;
-      background:radial-gradient(circle,#fff,#bbb);
-      box-shadow:0 0 40px rgba(255,255,255,.6);
-      z-index:-1;
-    }
+   /* HERO SECTION (ruang khusus) */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:120px 60px 60px;
+  gap:40px;
+}
+
+/* BUMI BESAR */
+.orbit{
+  width:260px;
+  height:260px;
+  position:relative;
+  animation:spin 10s linear infinite;
+}
+
+.earth{
+  width:140px;
+  height:140px;
+  background:radial-gradient(circle at 30% 30%, #4facfe, #0a3d62);
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  box-shadow:0 0 40px #4facfe;
+}
+
+.moon{
+  width:30px;
+  height:30px;
+  background:#ddd;
+  border-radius:50%;
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  box-shadow:0 0 10px #fff;
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+/* TEXT */
+.hero-text h1{
+  font-size:36px;
+  margin:0 0 10px;
+}
+
+.hero-text p{
+  color:#aaa;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+}
 
     /* Navbar */
     nav{
