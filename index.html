@@ -27,7 +27,14 @@ body{
   background-repeat: repeat;
   background-size: 200px 200px;
 }
+body{
+  animation: moveStars 60s linear infinite;
+}
 
+@keyframes moveStars {
+  from {background-position: 0 0;}
+  to {background-position: 1000px 1000px;}
+}
     /* 🌙 Moon */
     .moon{
       position:fixed;
