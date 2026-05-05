@@ -4,99 +4,113 @@
   <title>Scrapbook IPA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: black;
-      color: white;
-      scroll-behavior: smooth;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:#000;
+      color:#fff;
+      scroll-behavior:smooth;
+      overflow-y:scroll;
+      scroll-snap-type:y mandatory; /* 🔥 SNAP */
     }
 
-    /* 🌙 bulan */
-    .moon {
-      position: fixed;
-      top: 100px;
-      right: 80px;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, #fff, #aaa);
-      border-radius: 50%;
-      box-shadow: 0 0 80px white;
-      animation: float 5s ease-in-out infinite;
-      z-index: -1;
+    /* 🌙 Moon */
+    .moon{
+      position:fixed;
+      top:80px;
+      right:80px;
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      background:radial-gradient(circle,#fff,#bbb);
+      box-shadow:0 0 60px rgba(255,255,255,.9);
+      animation:float 6s ease-in-out infinite;
+      z-index:-1;
+    }
+    @keyframes float{
+      50%{transform:translateY(-20px)}
     }
 
-    @keyframes float {
-      50% { transform: translateY(-25px);}
+    /* 🌌 subtle stars */
+    .stars{
+      position:fixed; inset:0;
+      background:
+        radial-gradient(2px 2px at 20% 30%,#fff,transparent),
+        radial-gradient(1.5px 1.5px at 70% 60%,#fff,transparent),
+        radial-gradient(1px 1px at 40% 80%,#fff,transparent);
+      opacity:.3;
+      z-index:-2;
     }
 
-    /* navbar */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      z-index: 10;
+    /* 🔝 Navbar */
+    nav{
+      position:fixed; top:0; left:0; right:0;
+      display:flex; justify-content:center; gap:14px;
+      padding:14px;
+      background:rgba(0,0,0,.5);
+      backdrop-filter:blur(10px);
+      z-index:10;
+    }
+    nav a{
+      text-decoration:none; color:#ddd;
+      padding:8px 14px; border-radius:20px;
+      transition:.2s;
+    }
+    nav a:hover{background:rgba(255,255,255,.15)}
+
+    /* 📄 Section = 1 “page” */
+    section{
+      min-height:100vh;
+      padding:100px 40px 40px;
+      display:flex;
+      align-items:center;
+      scroll-snap-align:start; /* 🔥 SNAP TARGET */
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 15px;
-      border-radius: 20px;
+    /* 📦 Panel (kotak gede, bukan tengah) */
+    .panel{
+      width:520px;
+      max-width:90%;
+      padding:36px;
+      border-radius:18px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 40px rgba(0,0,0,.4);
     }
 
-    nav a:hover {
-      background: rgba(255,255,255,0.2);
+    /* posisi kiri/kanan biar dinamis */
+    .left{ margin-left:60px }
+    .right{ margin-left:auto; margin-right:60px }
+
+    h1{font-size:38px; margin:0 0 12px}
+    h2{font-size:18px; color:#aaa; margin:0 0 10px}
+    p{line-height:1.7; margin:6px 0}
+
+    iframe{
+      width:100%;
+      height:260px;
+      border:0;
+      border-radius:10px;
+      margin-top:10px;
     }
 
-    /* 🔥 SECTION = KAYAK PAGE */
-    section {
-      min-height: 100vh;
-      padding: 120px 80px;
-      display: flex;
-      align-items: center;
+    /* 📱 mobile: tetap rapi */
+    @media(max-width:768px){
+      .left,.right{margin:0 auto}
+      section{padding:100px 16px 32px}
+      .panel{width:100%}
     }
-
-    /* 📦 BOX DALAM SECTION */
-    .box {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 600px;
-    }
-
-    h1 {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      color: #aaa;
-      font-weight: 400;
-    }
-
-    iframe {
-      width: 100%;
-      height: 260px;
-      border: none;
-      border-radius: 10px;
-    }
-
   </style>
 </head>
 
 <body>
 
+<div class="stars"></div>
 <div class="moon"></div>
 
 <nav>
@@ -110,7 +124,7 @@
 
 <!-- 🧱 JUDUL -->
 <section id="judul">
-  <div class="box">
+  <div class="panel left">
     <h1>🚀 Scrapbook IPA</h1>
     <p>Rotasi, Revolusi, dan Artemis II</p>
   </div>
@@ -118,26 +132,25 @@
 
 <!-- 🧱 ANGGOTA -->
 <section id="anggota">
-  <div class="box">
+  <div class="panel right">
     <h2>Anggota</h2>
     <p>Nama 1 | Kelas | Absen</p>
     <p>Nama 2 | Kelas | Absen</p>
+    <p>dst...</p>
   </div>
 </section>
 
 <!-- 🧱 ALAT -->
 <section id="alat">
-  <div class="box">
+  <div class="panel left">
     <h2>Alat & Bahan</h2>
-    <p>Kertas</p>
-    <p>Gunting</p>
-    <p>Lem</p>
+    <p>Kertas, gunting, lem, dll</p>
   </div>
 </section>
 
 <!-- 🧱 CARA -->
 <section id="cara">
-  <div class="box">
+  <div class="panel right">
     <h2>Langkah Pembuatan</h2>
     <p>1. Tentukan tema</p>
     <p>2. Kumpulkan materi</p>
@@ -147,15 +160,15 @@
 
 <!-- 🧱 FUN FACT -->
 <section id="funfact">
-  <div class="box">
+  <div class="panel left">
     <h2>Fun Fact</h2>
-    <p>Bulan menjauh dari bumi sekitar 3,8 cm per tahun 🌙</p>
+    <p>Bulan menjauh ±3,8 cm per tahun 🌙</p>
   </div>
 </section>
 
 <!-- 🧱 VIDEO -->
 <section id="video">
-  <div class="box">
+  <div class="panel right">
     <h2>Video</h2>
     <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
   </div>
