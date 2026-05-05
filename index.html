@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scrapbook TIGACOR</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box}
@@ -89,17 +89,24 @@ nav{
 
 /* CONTENT */
 .container{
-  max-width:900px;
-  margin-left:70px;
+  max-width:1000px;
+  margin:auto;
   padding:20px;
 }
 
 .card{
-  background:#111;
+  background:linear-gradient(145deg, #0f172a, #020617);
+  border:1px solid rgba(255,255,255,0.1);
   padding:20px;
-  margin-bottom:18px;
-  border-radius:12px;
-  border:1px solid #222;
+  border-radius:16px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.7);
 }
 
 h2{color:#aaa}
