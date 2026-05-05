@@ -8,6 +8,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    /* 🌍 EARTH + ORBIT */
+.orbit{
+  position:fixed;
+  top:80px;
+  right:80px;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  animation:spin 12s linear infinite;
+  z-index:-1;
+}
+
+/* 🌍 Earth */
+.earth{
+  width:80px;
+  height:80px;
+  background:radial-gradient(circle at 30% 30%, #4facfe, #0a3d62);
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  box-shadow:0 0 25px #4facfe;
+}
+
+/* 🌙 Moon */
+.moon{
+  width:20px;
+  height:20px;
+  background:#ddd;
+  border-radius:50%;
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  box-shadow:0 0 10px #fff;
+}
+
+/* animasi muter */
+@keyframes spin{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -35,18 +78,10 @@ body{
   from {background-position: 0 0;}
   to {background-position: 1000px 1000px;}
 }
-    /* 🌙 Moon */
-    .moon{
-      position:fixed;
-      top:70px;
-      right:50px;
-      width:110px;
-      height:110px;
-      border-radius:50%;
-      background:radial-gradient(circle,#fff,#bbb);
-      box-shadow:0 0 40px rgba(255,255,255,.6);
-      z-index:-1;
-    }
+ <div class="orbit">
+  <div class="earth"></div>
+  <div class="moon"></div>
+</div>
 
     /* Navbar */
     nav{
