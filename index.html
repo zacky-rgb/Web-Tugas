@@ -15,27 +15,7 @@
       scroll-behavior: smooth;
     }
 
-    /* 🌙 BULAN (lebih jelas) */
-    .moon {
-      position: fixed;
-      top: 100px;
-      right: 60px;
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle, #fff, #bbb);
-      border-radius: 50%;
-      box-shadow: 0 0 60px white;
-      animation: float 4s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0);}
-      50% { transform: translateY(-25px);}
-      100% { transform: translateY(0);}
-    }
-
-    /* 🌌 BINTANG */
+    /* 🌌 background */
     .stars {
       position: fixed;
       width: 100%;
@@ -44,16 +24,34 @@
       z-index: -2;
     }
 
-    /* 🔝 NAVBAR */
+    /* 🌙 bulan */
+    .moon {
+      position: fixed;
+      top: 80px;
+      right: 60px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, #fff, #aaa);
+      border-radius: 50%;
+      box-shadow: 0 0 60px white;
+      animation: float 5s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes float {
+      50% { transform: translateY(-20px);}
+    }
+
+    /* 🔝 navbar */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.6);
       backdrop-filter: blur(10px);
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       padding: 15px;
       z-index: 10;
     }
@@ -61,7 +59,7 @@
     nav a {
       color: white;
       text-decoration: none;
-      padding: 8px 15px;
+      padding: 8px 14px;
       border-radius: 20px;
     }
 
@@ -69,32 +67,46 @@
       background: rgba(255,255,255,0.2);
     }
 
+    /* 📦 container (nggak tengah banget) */
     .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 120px 20px;
-      text-align: center;
+      max-width: 900px;
+      margin-left: 80px;
+      padding-top: 120px;
+      padding-right: 20px;
     }
 
-    section {
-      margin-bottom: 100px;
+    /* 📦 card */
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.08);
     }
 
     h1 {
       font-size: 32px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
 
     h2 {
       color: #aaa;
       font-weight: 400;
+      margin-bottom: 10px;
     }
 
     iframe {
       width: 100%;
       height: 250px;
       border: none;
-      margin-top: 10px;
+      border-radius: 10px;
     }
 
   </style>
@@ -105,7 +117,6 @@
 <div class="stars"></div>
 <div class="moon"></div>
 
-<!-- 🔝 MENU -->
 <nav>
   <a href="#judul">Judul</a>
   <a href="#anggota">Anggota</a>
@@ -117,41 +128,40 @@
 
 <div class="container">
 
-  <section id="judul">
+  <div id="judul" class="card">
     <h1>🚀 Scrapbook IPA</h1>
     <p>Rotasi, Revolusi, dan Artemis II</p>
-  </section>
+  </div>
 
-  <section id="anggota">
-    <h2>Anggota Kelompok</h2>
+  <div id="anggota" class="card">
+    <h2>Anggota</h2>
     <p>Nama 1 | Kelas | Absen</p>
     <p>Nama 2 | Kelas | Absen</p>
-    <p>dst...</p>
-  </section>
+  </div>
 
-  <section id="alat">
-    <h2>Alat dan Bahan</h2>
+  <div id="alat" class="card">
+    <h2>Alat & Bahan</h2>
     <p>Kertas</p>
     <p>Gunting</p>
     <p>Lem</p>
-  </section>
+  </div>
 
-  <section id="cara">
+  <div id="cara" class="card">
     <h2>Langkah Pembuatan</h2>
     <p>1. Tentukan tema</p>
     <p>2. Kumpulkan materi</p>
     <p>3. Susun scrapbook</p>
-  </section>
+  </div>
 
-  <section id="funfact">
+  <div id="funfact" class="card">
     <h2>Fun Fact</h2>
-    <p>Bulan menjauh dari bumi sekitar 3,8 cm per tahun 🌙</p>
-  </section>
+    <p>Bulan menjauh dari bumi 3,8 cm/tahun 🌙</p>
+  </div>
 
-  <section id="video">
+  <div id="video" class="card">
     <h2>Video</h2>
     <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
-  </section>
+  </div>
 
 </div>
 
