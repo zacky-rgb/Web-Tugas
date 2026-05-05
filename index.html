@@ -7,110 +7,109 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    *{box-sizing:border-box}
     body{
       margin:0;
       font-family:'Inter',sans-serif;
-      background:#000;
-      color:#fff;
-      scroll-behavior:smooth;
-      overflow-y:scroll;
-      scroll-snap-type:y mandatory; /* 🔥 SNAP */
+      background:#0a0a0a;
+      color:#eaeaea;
     }
 
     /* 🌙 Moon */
     .moon{
       position:fixed;
       top:80px;
-      right:80px;
-      width:140px;
-      height:140px;
+      right:60px;
+      width:120px;
+      height:120px;
       border-radius:50%;
-      background:radial-gradient(circle,#fff,#bbb);
-      box-shadow:0 0 60px rgba(255,255,255,.9);
-      animation:float 6s ease-in-out infinite;
+      background:radial-gradient(circle,#fff,#ccc);
+      box-shadow:0 0 40px rgba(255,255,255,0.8);
       z-index:-1;
-    }
-    @keyframes float{
-      50%{transform:translateY(-20px)}
-    }
-
-    /* 🌌 subtle stars */
-    .stars{
-      position:fixed; inset:0;
-      background:
-        radial-gradient(2px 2px at 20% 30%,#fff,transparent),
-        radial-gradient(1.5px 1.5px at 70% 60%,#fff,transparent),
-        radial-gradient(1px 1px at 40% 80%,#fff,transparent);
-      opacity:.3;
-      z-index:-2;
     }
 
     /* 🔝 Navbar */
     nav{
-      position:fixed; top:0; left:0; right:0;
-      display:flex; justify-content:center; gap:14px;
-      padding:14px;
-      background:rgba(0,0,0,.5);
-      backdrop-filter:blur(10px);
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      padding:12px;
+      background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(8px);
       z-index:10;
     }
+
     nav a{
-      text-decoration:none; color:#ddd;
-      padding:8px 14px; border-radius:20px;
-      transition:.2s;
+      color:#ddd;
+      text-decoration:none;
+      padding:6px 12px;
+      border-radius:15px;
+      font-size:14px;
     }
-    nav a:hover{background:rgba(255,255,255,.15)}
 
-    /* 📄 Section = 1 “page” */
+    nav a:hover{
+      background:rgba(255,255,255,0.1);
+    }
+
+    /* 📦 Layout */
+    .container{
+      max-width:800px;
+      margin-left:80px;
+      padding-top:90px;
+    }
+
     section{
-      min-height:100vh;
-      padding:100px 40px 40px;
-      display:flex;
-      align-items:center;
-      scroll-snap-align:start; /* 🔥 SNAP TARGET */
+      margin-bottom:25px;
     }
 
-    /* 📦 Panel (kotak gede, bukan tengah) */
-    .panel{
-      width:520px;
-      max-width:90%;
-      padding:36px;
-      border-radius:18px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      backdrop-filter:blur(12px);
-      box-shadow:0 10px 40px rgba(0,0,0,.4);
+    /* 📦 Card */
+    .card{
+      background:#111;
+      border:1px solid #222;
+      padding:20px;
+      border-radius:12px;
     }
 
-    /* posisi kiri/kanan biar dinamis */
-    .left{ margin-left:60px }
-    .right{ margin-left:auto; margin-right:60px }
+    h1{
+      margin:0 0 10px;
+      font-size:28px;
+    }
 
-    h1{font-size:38px; margin:0 0 12px}
-    h2{font-size:18px; color:#aaa; margin:0 0 10px}
-    p{line-height:1.7; margin:6px 0}
+    h2{
+      margin:0 0 10px;
+      font-size:16px;
+      color:#aaa;
+      font-weight:400;
+    }
+
+    p{
+      margin:3px 0;
+      line-height:1.5;
+    }
 
     iframe{
       width:100%;
-      height:260px;
-      border:0;
-      border-radius:10px;
+      height:220px;
+      border:none;
+      border-radius:8px;
       margin-top:10px;
     }
 
-    /* 📱 mobile: tetap rapi */
+    /* 📱 Mobile */
     @media(max-width:768px){
-      .left,.right{margin:0 auto}
-      section{padding:100px 16px 32px}
-      .panel{width:100%}
+      .container{
+        margin:0;
+        padding:90px 15px;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
-<div class="stars"></div>
 <div class="moon"></div>
 
 <nav>
@@ -122,57 +121,57 @@
   <a href="#video">Video</a>
 </nav>
 
-<!-- 🧱 JUDUL -->
-<section id="judul">
-  <div class="panel left">
-    <h1>🚀 Scrapbook IPA</h1>
-    <p>Rotasi, Revolusi, dan Artemis II</p>
-  </div>
-</section>
+<div class="container">
 
-<!-- 🧱 ANGGOTA -->
-<section id="anggota">
-  <div class="panel right">
-    <h2>Anggota</h2>
-    <p>Nama 1 | Kelas | Absen</p>
-    <p>Nama 2 | Kelas | Absen</p>
-    <p>dst...</p>
-  </div>
-</section>
+  <section id="judul">
+    <div class="card">
+      <h1>🚀 Scrapbook IPA</h1>
+      <p>Rotasi, Revolusi, dan Artemis II</p>
+    </div>
+  </section>
 
-<!-- 🧱 ALAT -->
-<section id="alat">
-  <div class="panel left">
-    <h2>Alat & Bahan</h2>
-    <p>Kertas, gunting, lem, dll</p>
-  </div>
-</section>
+  <section id="anggota">
+    <div class="card">
+      <h2>Anggota</h2>
+      <p>Nama 1 | Kelas | Absen</p>
+      <p>Nama 2 | Kelas | Absen</p>
+      <p>dst...</p>
+    </div>
+  </section>
 
-<!-- 🧱 CARA -->
-<section id="cara">
-  <div class="panel right">
-    <h2>Langkah Pembuatan</h2>
-    <p>1. Tentukan tema</p>
-    <p>2. Kumpulkan materi</p>
-    <p>3. Susun scrapbook</p>
-  </div>
-</section>
+  <section id="alat">
+    <div class="card">
+      <h2>Alat & Bahan</h2>
+      <p>Kertas</p>
+      <p>Gunting</p>
+      <p>Lem</p>
+    </div>
+  </section>
 
-<!-- 🧱 FUN FACT -->
-<section id="funfact">
-  <div class="panel left">
-    <h2>Fun Fact</h2>
-    <p>Bulan menjauh ±3,8 cm per tahun 🌙</p>
-  </div>
-</section>
+  <section id="cara">
+    <div class="card">
+      <h2>Langkah Pembuatan</h2>
+      <p>1. Tentukan tema</p>
+      <p>2. Kumpulkan materi</p>
+      <p>3. Susun scrapbook</p>
+    </div>
+  </section>
 
-<!-- 🧱 VIDEO -->
-<section id="video">
-  <div class="panel right">
-    <h2>Video</h2>
-    <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
-  </div>
-</section>
+  <section id="funfact">
+    <div class="card">
+      <h2>Fun Fact</h2>
+      <p>Bulan menjauh sekitar 3,8 cm per tahun 🌙</p>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="card">
+      <h2>Video</h2>
+      <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
+    </div>
+  </section>
+
+</div>
 
 </body>
 </html>
