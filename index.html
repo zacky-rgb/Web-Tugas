@@ -4,32 +4,66 @@
   <title>Scrapbook IPA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #111, #000);
+      background: black;
       color: white;
       overflow-x: hidden;
     }
 
+    /* 🌌 bintang */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url("https://www.transparenttextures.com/patterns/stardust.png");
+      animation: moveStars 60s linear infinite;
+      z-index: -2;
+    }
+
+    @keyframes moveStars {
+      from {background-position: 0 0;}
+      to {background-position: 1000px 1000px;}
+    }
+
+    /* 🌙 bulan */
+    .moon {
+      position: fixed;
+      top: 50px;
+      right: 50px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #fff, #ccc);
+      border-radius: 50%;
+      box-shadow: 0 0 40px white;
+      animation: float 6s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0);}
+      50% { transform: translateY(-20px);}
+      100% { transform: translateY(0);}
+    }
+
     .container {
-      max-width: 800px;
+      max-width: 700px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 100px 20px;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
-      font-size: 42px;
-      margin-bottom: 60px;
-      letter-spacing: 1px;
+      font-size: 34px;
+      margin-bottom: 80px;
     }
 
     .section {
-      margin-bottom: 60px;
+      margin-bottom: 80px;
       opacity: 0;
       transform: translateY(40px);
       transition: 0.8s;
@@ -41,43 +75,15 @@
     }
 
     h2 {
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      padding: 25px;
-      border-radius: 15px;
-      backdrop-filter: blur(15px);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      background: rgba(255,255,255,0.08);
+      color: #aaa;
+      font-weight: 400;
     }
 
     iframe {
       width: 100%;
-      height: 280px;
-      border-radius: 10px;
+      height: 250px;
+      border: none;
       margin-top: 10px;
-    }
-
-    /* glowing effect */
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 15px;
-      padding: 1px;
-      background: linear-gradient(45deg, #3b82f6, transparent);
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
     }
 
   </style>
@@ -85,39 +91,33 @@
 
 <body>
 
+<div class="stars"></div>
+<div class="moon"></div>
+
 <div class="container">
 
   <h1>🚀 Scrapbook IPA</h1>
 
   <div class="section">
     <h2>Identitas</h2>
-    <div class="card">
-      <p>Nama 1 | Kelas | Absen</p>
-      <p>Nama 2 | Kelas | Absen</p>
-      <p>dst...</p>
-    </div>
+    <p>Nama 1 | Kelas | Absen</p>
+    <p>Nama 2 | Kelas | Absen</p>
   </div>
 
   <div class="section">
     <h2>Rotasi & Revolusi</h2>
-    <div class="card">
-      <p>Rotasi bumi menyebabkan siang dan malam.</p>
-      <p>Revolusi bumi menyebabkan pergantian musim.</p>
-    </div>
+    <p>Rotasi bumi menyebabkan siang dan malam.</p>
+    <p>Revolusi bumi menyebabkan pergantian musim.</p>
   </div>
 
   <div class="section">
     <h2>Artemis II</h2>
-    <div class="card">
-      <p>Misi manusia mengelilingi bulan.</p>
-    </div>
+    <p>Misi manusia mengelilingi bulan.</p>
   </div>
 
   <div class="section">
     <h2>Video</h2>
-    <div class="card">
-      <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
-    </div>
+    <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
   </div>
 
 </div>
