@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Scrapbook IPA</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrapbook TIGACOR</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    *{box-sizing:border-box}
     body{
       margin:0;
       font-family:'Inter',sans-serif;
-      background:#0a0a0a;
+      background:#0b0b0b;
       color:#eaeaea;
+      scroll-behavior:smooth;
     }
 
     /* 🌙 Moon */
     .moon{
       position:fixed;
-      top:80px;
-      right:60px;
-      width:120px;
-      height:120px;
+      top:70px;
+      right:50px;
+      width:110px;
+      height:110px;
       border-radius:50%;
-      background:radial-gradient(circle,#fff,#ccc);
-      box-shadow:0 0 40px rgba(255,255,255,0.8);
+      background:radial-gradient(circle,#fff,#bbb);
+      box-shadow:0 0 40px rgba(255,255,255,.6);
       z-index:-1;
     }
 
-    /* 🔝 Navbar */
+    /* Navbar */
     nav{
       position:fixed;
       top:0;
@@ -36,7 +39,7 @@
       justify-content:center;
       gap:10px;
       padding:12px;
-      background:rgba(0,0,0,0.7);
+      background:rgba(0,0,0,.7);
       backdrop-filter:blur(8px);
       z-index:10;
     }
@@ -45,48 +48,35 @@
       color:#ddd;
       text-decoration:none;
       padding:6px 12px;
-      border-radius:15px;
-      font-size:14px;
+      border-radius:10px;
+      font-size:13px;
     }
 
     nav a:hover{
-      background:rgba(255,255,255,0.1);
+      background:#222;
     }
 
-    /* 📦 Layout */
+    /* Layout */
     .container{
-      max-width:800px;
-      margin-left:80px;
-      padding-top:90px;
+      max-width:900px;
+      margin-left:70px;
+      padding:90px 20px 40px;
     }
 
-    section{
-      margin-bottom:25px;
-    }
-
-    /* 📦 Card */
     .card{
       background:#111;
       border:1px solid #222;
       padding:20px;
       border-radius:12px;
+      margin-bottom:18px;
     }
 
-    h1{
-      margin:0 0 10px;
-      font-size:28px;
-    }
+    h1{margin:0 0 8px; font-size:26px;}
+    h2{margin:0 0 8px; color:#aaa; font-weight:400;}
+    p{margin:3px 0; line-height:1.5;}
 
-    h2{
-      margin:0 0 10px;
-      font-size:16px;
-      color:#aaa;
-      font-weight:400;
-    }
-
-    p{
-      margin:3px 0;
-      line-height:1.5;
+    ul, ol{
+      margin:5px 0 5px 18px;
     }
 
     iframe{
@@ -97,14 +87,12 @@
       margin-top:10px;
     }
 
-    /* 📱 Mobile */
     @media(max-width:768px){
       .container{
         margin:0;
-        padding:90px 15px;
+        padding:90px 15px 30px;
       }
     }
-
   </style>
 </head>
 
@@ -115,60 +103,89 @@
 <nav>
   <a href="#judul">Judul</a>
   <a href="#anggota">Anggota</a>
+  <a href="#info">Info</a>
   <a href="#alat">Alat</a>
-  <a href="#cara">Langkah</a>
-  <a href="#funfact">Fun Fact</a>
+  <a href="#cara">Cara</a>
   <a href="#video">Video</a>
+  <a href="#fakta">Fun Fact</a>
 </nav>
 
 <div class="container">
 
-  <section id="judul">
-    <div class="card">
-      <h1>🚀 Scrapbook IPA</h1>
-      <p>Rotasi, Revolusi, dan Artemis II</p>
-    </div>
+  <section id="judul" class="card">
+    <h1>Web - Kelompok 3</h1>
+    <p><b>SCRAPBOOK TIGACOR</b></p>
+    <p>Materi: Rotasi dan Revolusi Bumi</p>
   </section>
 
-  <section id="anggota">
-    <div class="card">
-      <h2>Anggota</h2>
-      <p>Nama 1 | Kelas | Absen</p>
-      <p>Nama 2 | Kelas | Absen</p>
-      <p>dst...</p>
-    </div>
+  <section id="anggota" class="card">
+    <h2>Identitas / Anggota</h2>
+    <p>Anugerah Aufa Fatih Zaki Ozam | No Absen: 04</p>
+    <p>Damar Pandu Mukti | No Absen: 14</p>
+    <p>Farrelino Zacky Arsatya | No Absen: 17</p>
+    <p>Laiq Athar Rama Daniswara | No Absen: 22</p>
+    <p>Azalia Naya Anggraeni | No Absen: 10</p>
+    <p>Nadine Vania Putri Riyanto | No Absen: 26</p>
+    <p>Qonita Zahira Hanan | No Absen: 28</p>
+    <p>Quinsa Yeslin Selena Mukti | No Absen: 29</p>
   </section>
 
-  <section id="alat">
-    <div class="card">
-      <h2>Alat & Bahan</h2>
-      <p>Kertas</p>
-      <p>Gunting</p>
-      <p>Lem</p>
-    </div>
+  <section id="info" class="card">
+    <h2>Info Project</h2>
+    <p>Project IPA / Sains</p>
+    <p>Tema: Fun Fact Bulan</p>
+    <p>Tujuan: mengenalkan Bulan sebagai satelit alami Bumi dengan tampilan menarik dan mudah dipahami.</p>
   </section>
 
-  <section id="cara">
-    <div class="card">
-      <h2>Langkah Pembuatan</h2>
-      <p>1. Tentukan tema</p>
-      <p>2. Kumpulkan materi</p>
-      <p>3. Susun scrapbook</p>
-    </div>
+  <section id="alat" class="card">
+    <h2>Alat dan Bahan</h2>
+    <ul>
+      <li>Laptop / HP</li>
+      <li>Aplikasi catatan</li>
+      <li>Browser (Chrome, Safari, Edge)</li>
+      <li>Gambar Bulan</li>
+      <li>Internet</li>
+      <li>Aplikasi video (CapCut, Canva)</li>
+      <li>File HTML</li>
+    </ul>
   </section>
 
-  <section id="funfact">
-    <div class="card">
-      <h2>Fun Fact</h2>
-      <p>Bulan menjauh sekitar 3,8 cm per tahun 🌙</p>
-    </div>
+  <section id="cara" class="card">
+    <h2>Cara Pengerjaan</h2>
+    <ol>
+      <li>Menentukan tema</li>
+      <li>Membagi tugas anggota</li>
+      <li>Mengumpulkan materi</li>
+      <li>Menyusun isi website</li>
+      <li>Membuat desain</li>
+      <li>Memasukkan ke HTML</li>
+      <li>Mengecek hasil</li>
+      <li>Merekam video</li>
+      <li>Finishing</li>
+    </ol>
   </section>
 
-  <section id="video">
-    <div class="card">
-      <h2>Video</h2>
-      <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
-    </div>
+  <section id="video" class="card">
+    <h2>Video Pembuatan</h2>
+    <p>Durasi minimal 3 menit</p>
+    <p>Isi: proses pembuatan dari awal sampai akhir</p>
+    <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
+  </section>
+
+  <section id="fakta" class="card">
+    <h2>Fun Fact Bulan</h2>
+    <ol>
+      <li>Bulan adalah satelit alami Bumi</li>
+      <li>Cahaya berasal dari Matahari</li>
+      <li>Mempengaruhi pasang surut air laut</li>
+      <li>Selalu menunjukkan sisi yang sama</li>
+      <li>Banyak kawah</li>
+      <li>Tidak ada udara</li>
+      <li>Gravitasi lebih lemah</li>
+      <li>Jejak kaki bertahan lama</li>
+      <li>Memiliki fase</li>
+      <li>Sangat terang di malam hari</li>
+    </ol>
   </section>
 
 </div>
