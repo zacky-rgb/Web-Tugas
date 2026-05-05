@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scrapbook TIGACOR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrapbook TIGACOR</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    /* 🌍 EARTH + ORBIT */
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  color:#eaeaea;
+  background:#000;
+
+  /* ⭐ bintang */
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 70% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 40% 80%, #fff, transparent),
+    radial-gradient(2px 2px at 80% 20%, #fff, transparent);
+  background-size:200px 200px;
+
+  animation:moveStars 60s linear infinite;
+}
+
+@keyframes moveStars{
+  from{background-position:0 0;}
+  to{background-position:1000px 1000px;}
+}
+
+/* 🌍 ORBIT */
 .orbit{
   position:fixed;
   top:80px;
   right:80px;
   width:160px;
   height:160px;
-  border-radius:50%;
   animation:spin 12s linear infinite;
   z-index:-1;
 }
 
-/* 🌍 Earth */
 .earth{
   width:80px;
   height:80px;
@@ -29,11 +51,10 @@
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%, -50%);
+  transform:translate(-50%,-50%);
   box-shadow:0 0 25px #4facfe;
 }
 
-/* 🌙 Moon */
 .moon{
   width:20px;
   height:20px;
@@ -46,113 +67,85 @@
   box-shadow:0 0 10px #fff;
 }
 
-/* animasi muter */
 @keyframes spin{
-  from{ transform:rotate(0deg); }
-  to{ transform:rotate(360deg); }
-}
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:'Inter',sans-serif;
-      background:#0b0b0b;
-      color:#eaeaea;
-      scroll-behavior:smooth;
-    }
-    /* 🌌 STAR BACKGROUND */
-body{
-  background: #000;
-  background-image:
-    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 70% 60%, #fff, transparent),
-    radial-gradient(1px 1px at 40% 80%, #fff, transparent),
-    radial-gradient(2px 2px at 80% 20%, #fff, transparent);
-  background-repeat: repeat;
-  background-size: 200px 200px;
-}
-body{
-  animation: moveStars 60s linear infinite;
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
 }
 
-@keyframes moveStars {
-  from {background-position: 0 0;}
-  to {background-position: 1000px 1000px;}
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding:12px;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(8px);
+  z-index:10;
 }
- <div class="orbit">
-  <div class="earth"></div>
-  <div class="moon"></div>
-</div>
 
-    /* Navbar */
-    nav{
-      position:fixed;
-      top:0;
-      width:100%;
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      padding:12px;
-      background:rgba(0,0,0,.7);
-      backdrop-filter:blur(8px);
-      z-index:10;
-    }
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  padding:6px 12px;
+  border-radius:10px;
+  font-size:13px;
+}
 
-    nav a{
-      color:#ddd;
-      text-decoration:none;
-      padding:6px 12px;
-      border-radius:10px;
-      font-size:13px;
-    }
+nav a:hover{
+  background:#222;
+}
 
-    nav a:hover{
-      background:#222;
-    }
+/* LAYOUT */
+.container{
+  max-width:900px;
+  margin-left:70px;
+  padding:90px 20px 40px;
+}
 
-    /* Layout */
-    .container{
-      max-width:900px;
-      margin-left:70px;
-      padding:90px 20px 40px;
-    }
+/* CARD */
+.card{
+  background:#111;
+  border:1px solid #222;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:18px;
+}
 
-    .card{
-      background:#111;
-      border:1px solid #222;
-      padding:20px;
-      border-radius:12px;
-      margin-bottom:18px;
-    }
+h1{margin:0 0 8px;font-size:26px;}
+h2{margin:0 0 8px;color:#aaa;font-weight:400;}
+p{margin:3px 0;}
 
-    h1{margin:0 0 8px; font-size:26px;}
-    h2{margin:0 0 8px; color:#aaa; font-weight:400;}
-    p{margin:3px 0; line-height:1.5;}
+ul,ol{margin-left:18px;}
 
-    ul, ol{
-      margin:5px 0 5px 18px;
-    }
+iframe{
+  width:100%;
+  height:220px;
+  border:none;
+  border-radius:8px;
+}
 
-    iframe{
-      width:100%;
-      height:220px;
-      border:none;
-      border-radius:8px;
-      margin-top:10px;
-    }
-
-    @media(max-width:768px){
-      .container{
-        margin:0;
-        padding:90px 15px 30px;
-      }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:768px){
+  .container{
+    margin:0;
+    padding:90px 15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<div class="moon"></div>
+<!-- 🌍 ANIMASI -->
+<div class="orbit">
+  <div class="earth"></div>
+  <div class="moon"></div>
+</div>
 
+<!-- NAV -->
 <nav>
   <a href="#judul">Judul</a>
   <a href="#anggota">Anggota</a>
@@ -165,81 +158,63 @@ body{
 
 <div class="container">
 
-  <section id="judul" class="card">
-    <h1>Web - Kelompok 3</h1>
-    <p><b>SCRAPBOOK TIGACOR</b></p>
-    <p>Materi: Rotasi dan Revolusi Bumi</p>
-  </section>
+<section id="judul" class="card">
+  <h1>Web - Kelompok 3</h1>
+  <p><b>SCRAPBOOK TIGACOR</b></p>
+  <p>Rotasi dan Revolusi Bumi</p>
+</section>
 
-  <section id="anggota" class="card">
-    <h2>Identitas / Anggota</h2>
-    <p>Anugerah Aufa Fatih Zaki Ozam | No Absen: 04</p>
-    <p>Damar Pandu Mukti | No Absen: 14</p>
-    <p>Farrelino Zacky Arsatya | No Absen: 17</p>
-    <p>Laiq Athar Rama Daniswara | No Absen: 22</p>
-    <p>Azalia Naya Anggraeni | No Absen: 10</p>
-    <p>Nadine Vania Putri Riyanto | No Absen: 26</p>
-    <p>Qonita Zahira Hanan | No Absen: 28</p>
-    <p>Quinsa Yeslin Selena Mukti | No Absen: 29</p>
-  </section>
+<section id="anggota" class="card">
+  <h2>Anggota</h2>
+  <p>Anugerah Aufa Fatih Zaki Ozam | 04</p>
+  <p>Damar Pandu Mukti | 14</p>
+  <p>Farrelino Zacky Arsatya | 17</p>
+  <p>Laiq Athar Rama Daniswara | 22</p>
+  <p>Azalia Naya Anggraeni | 10</p>
+  <p>Nadine Vania Putri Riyanto | 26</p>
+  <p>Qonita Zahira Hanan | 28</p>
+  <p>Quinsa Yeslin Selena Mukti | 29</p>
+</section>
 
-  <section id="info" class="card">
-    <h2>Info Project</h2>
-    <p>Project IPA / Sains</p>
-    <p>Tema: Fun Fact Bulan</p>
-    <p>Tujuan: mengenalkan Bulan sebagai satelit alami Bumi dengan tampilan menarik dan mudah dipahami.</p>
-  </section>
+<section id="info" class="card">
+  <h2>Info Project</h2>
+  <p>Project IPA - Tema Fun Fact Bulan</p>
+</section>
 
-  <section id="alat" class="card">
-    <h2>Alat dan Bahan</h2>
-    <ul>
-      <li>Laptop / HP</li>
-      <li>Aplikasi catatan</li>
-      <li>Browser (Chrome, Safari, Edge)</li>
-      <li>Gambar Bulan</li>
-      <li>Internet</li>
-      <li>Aplikasi video (CapCut, Canva)</li>
-      <li>File HTML</li>
-    </ul>
-  </section>
+<section id="alat" class="card">
+  <h2>Alat & Bahan</h2>
+  <ul>
+    <li>Laptop / HP</li>
+    <li>Internet</li>
+    <li>Browser</li>
+    <li>Aplikasi edit</li>
+  </ul>
+</section>
 
-  <section id="cara" class="card">
-    <h2>Cara Pengerjaan</h2>
-    <ol>
-      <li>Menentukan tema</li>
-      <li>Membagi tugas anggota</li>
-      <li>Mengumpulkan materi</li>
-      <li>Menyusun isi website</li>
-      <li>Membuat desain</li>
-      <li>Memasukkan ke HTML</li>
-      <li>Mengecek hasil</li>
-      <li>Merekam video</li>
-      <li>Finishing</li>
-    </ol>
-  </section>
+<section id="cara" class="card">
+  <h2>Cara</h2>
+  <ol>
+    <li>Tentukan tema</li>
+    <li>Bagi tugas</li>
+    <li>Kumpulkan materi</li>
+    <li>Buat website</li>
+  </ol>
+</section>
 
-  <section id="video" class="card">
-    <h2>Video Pembuatan</h2>
-    <p>Durasi minimal 3 menit</p>
-    <p>Isi: proses pembuatan dari awal sampai akhir</p>
-    <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
-  </section>
+<section id="video" class="card">
+  <h2>Video</h2>
+  <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
+</section>
 
-  <section id="fakta" class="card">
-    <h2>Fun Fact Bulan</h2>
-    <ol>
-      <li>Bulan adalah satelit alami Bumi</li>
-      <li>Cahaya berasal dari Matahari</li>
-      <li>Mempengaruhi pasang surut air laut</li>
-      <li>Selalu menunjukkan sisi yang sama</li>
-      <li>Banyak kawah</li>
-      <li>Tidak ada udara</li>
-      <li>Gravitasi lebih lemah</li>
-      <li>Jejak kaki bertahan lama</li>
-      <li>Memiliki fase</li>
-      <li>Sangat terang di malam hari</li>
-    </ol>
-  </section>
+<section id="fakta" class="card">
+  <h2>Fun Fact</h2>
+  <ol>
+    <li>Bulan satelit alami Bumi</li>
+    <li>Cahaya dari Matahari</li>
+    <li>Mempengaruhi pasang laut</li>
+    <li>Selalu sisi sama</li>
+  </ol>
+</section>
 
 </div>
 
