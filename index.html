@@ -4,48 +4,50 @@
   <title>Scrapbook IPA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font keren -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      font-family: 'Inter', sans-serif;
+      background: #000;
       color: white;
     }
 
     header {
+      padding: 20px;
       text-align: center;
-      padding: 30px;
-      font-size: 28px;
-      font-weight: bold;
-      background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(10px);
+      font-size: 24px;
+      border-bottom: 1px solid #222;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
       padding: 20px;
     }
 
+    .section {
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease;
+    }
+
+    h2 {
+      border-left: 4px solid #fff;
+      padding-left: 10px;
+    }
+
     .card {
-      background: rgba(255,255,255,0.05);
+      background: #111;
       padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      margin-top: 10px;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-
-    h2 {
-      color: #60a5fa;
+      background: #1a1a1a;
+      transform: translateY(-5px);
     }
 
     iframe {
@@ -54,10 +56,9 @@
       border-radius: 10px;
     }
 
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
@@ -65,49 +66,33 @@
 <body>
 
 <header>
-  🚀 SCRAPBOOK IPA ZACKY 🌍
+  Scrapbook IPA 🚀
 </header>
 
 <div class="container">
 
-  <div class="card">
-    <h2>Judul</h2>
-    <p>Rotasi, Revolusi, dan Artemis II</p>
+  <div class="section">
+    <h2>Identitas</h2>
+    <div class="card">
+      <p>Isi nama kelompok di sini</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Identitas Kelompok</h2>
-    <ul>
-     <li>Anugerah Aufa Fatih Zaki Ozam| No Absen: 04</li>
-      <li>Damar Pandu Mukti| No Absen: 14</li>
-      <li>Farrelino Zacky Arsatya| No Absen: 17</li>
-      <li>Laiq Athar Rama Daniswara| No Absen: 22</li>
-      <li>Azalia Naya Anggraeni| No Absen: 10</li>
-      <li>Nadine Vania Putri Riyanto| No Absen: 26</li>
-      <li>Qonita Zahira Hanan| No Absen: 28</li>
-      <li>Quinsa Yeslin Selena Mukti| No Absen: 29</li>
-    </ul>
+  <div class="section">
+    <h2>Rotasi & Revolusi</h2>
+    <div class="card">
+      <p>Isi materi kamu di sini</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Rotasi Bumi</h2>
-    <p>Rotasi bumi menyebabkan siang dan malam.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Earth_rotation.gif">
+  <div class="section">
+    <h2>Artemis II</h2>
+    <div class="card">
+      <p>Isi penjelasan di sini</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Revolusi Bumi</h2>
-    <p>Revolusi bumi menyebabkan pergantian musim.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Earth-orbit.gif">
-  </div>
-
-  <div class="card">
-    <h2>Misi Artemis II</h2>
-    <p>Misi manusia mengelilingi bulan.</p>
-    <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/artemis_ii.jpg">
-  </div>
-
-  <div class="card">
+  <div class="section">
     <h2>Video</h2>
     <iframe src="https://www.youtube.com/embed/3IL25IDJ3HA"></iframe>
   </div>
