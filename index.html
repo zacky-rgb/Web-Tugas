@@ -16,7 +16,15 @@
   --b:#22d3ee;
   --c:#38bdf8;
 }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text);background:radial-gradient(circle at 20% 10%,rgba(157,123,255,.18),transparent 24%),radial-gradient(circle at 80% 20%,rgba(100,231,223,.12),transparent 26%),linear-gradient(180deg,var(--bg2),var(--bg));overflow-x:hidden}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{
+  margin:0;
+  font-family:Inter, sans-serif;
+  color:#fff;
+
+  background: linear-gradient(-45deg, #0b0320, #1a0b3a, #020617, #0f172a);
+  background-size:400% 400%;
+  animation:gradientMove 15s ease infinite;
+}
     .stars,.stars2{position:fixed;inset:0;z-index:-2;pointer-events:none;background-repeat:repeat;opacity:.7}.stars{background-image:radial-gradient(2px 2px at 20px 40px,#fff,transparent),radial-gradient(1px 1px at 120px 80px,#fff,transparent),radial-gradient(2px 2px at 180px 150px,#fff,transparent);background-size:220px 180px;animation:moveStars 90s linear infinite}.stars2{background-image:radial-gradient(1px 1px at 70px 100px,#fff,transparent),radial-gradient(2px 2px at 260px 60px,#fff,transparent);background-size:320px 230px;animation:twinkle 5s ease-in-out infinite}
     @keyframes moveStars{to{transform:translateY(-180px)}}@keyframes twinkle{50%{opacity:.25}}@keyframes float{50%{transform:translateY(-14px)}}@keyframes spin{to{transform:rotate(360deg)}}
     nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px 6vw;background:rgba(5,8,20,.62);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.brand{font-weight:900;letter-spacing:.04em}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a{padding:9px 12px;border-radius:999px;color:var(--muted);text-decoration:none}.navlinks a:hover{background:var(--glass);color:white}
@@ -29,7 +37,7 @@
 <body>
   <div class="stars"></div><div class="stars2"></div>
   <nav><div class="brand">🌙 Kelompok 4</div><div class="navlinks"><a href="#judul">Judul</a><a href="#identitas">Identitas</a><a href="#alat">Alat</a><a href="#langkah">Langkah</a><a href="#video">Video</a><a href="#funfact">Fun Fact</a></div></nav>
-  <header class="hero" id="judul"><div><div class="eyebrow">Created By Kelompok 4</div><h1 id="mainTitle">Project <span class="grad">Bulan</span></h1><p id="mainSubtitle"></p><div class="btnrow"><a class="btn primary" href="#identitas">Mulai Isi</a><a class="btn" href="#langkah">Lihat Langkah</a><a class="btn" href="#edit">Cara Ubah Isi</a></div></div><div class="moonbox"><div class="orbit"></div><div class="moon"></div></div></header>
+  <header class="hero" id="judul"><div><div class="eyebrow">Created By Kelompok 3</div><h1 id="mainTitle">Project <span class="grad">Bulan</span></h1><p id="mainSubtitle"></p><div class="btnrow"><a class="btn primary" href="#identitas">Mulai Isi</a><a class="btn" href="#langkah">Lihat Langkah</a><a class="btn" href="#edit">Cara Ubah Isi</a></div></div><div class="moonbox"><div class="orbit"></div><div class="moon"></div></div></header>
   <section id="identitas"><div class="head reveal"><h2>Perkenalan Diri / Identitas</h2><p>Bagian ini buat nama anggota kelompok dan pembagian tugas.</p></div><div class="grid"><div class="card wide reveal"><span class="tag">Anggota</span><h3>Daftar Anggota</h3><div id="memberList"></div></div><div class="card wide reveal"><span class="tag">Info</span><h3>Identitas Project</h3><p id="identityText"></p></div></div></section>
   <section id="alat"><div class="head reveal"><h2>Alat dan Bahan</h2><p>Isi alat/bahan bisa kamu ubah sesuai project asli.</p></div><div class="grid"><div class="card full reveal"><ul id="toolsList"></ul></div></div></section>
   <section id="langkah"><div class="head reveal"><h2>Cara Ngerjain</h2><p>Langkah-langkah dibuat gampang diedit, tinggal tambah/kurangi daftar langkah di bagian DATA.</p></div><div class="grid"><div class="card full reveal steps" id="stepList"></div></div></section>
