@@ -1,308 +1,117 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scrapbook TIGACOR</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
-<style>
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  color:#eaeaea;
-  background:#000;
-
-  background-image:
-    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 70% 60%, #fff, transparent),
-    radial-gradient(1px 1px at 40% 80%, #fff, transparent),
-    radial-gradient(2px 2px at 80% 20%, #fff, transparent);
-
-  background-size:200px 200px;
-  animation:starsMove 60s linear infinite;
-}
-body{
-  background: radial-gradient(circle at top, #020617, #000);
-}
-@keyframes starsMove{
-  from{background-position:0 0;}
-  to{background-position:1000px 1000px;}
-}
-
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  padding:12px;
-  background:rgba(0,0,0,.7);
-}
-
-/* HERO */
-.hero{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:140px 80px 60px;
-  gap:50px;
-}
-
-.orbit{
-  width:320px;
-  height:320px;
-  position:relative;
-  animation:spin 10s linear infinite;
-}
-
-.earth{
-  width:180px;
-  height:180px;
-  background:radial-gradient(circle,#4facfe,#0a3d62);
-  border-radius:50%;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  box-shadow:0 0 40px #4facfe;
-}
-
-.moon{
-  width:35px;
-  height:35px;
-  background:#ddd;
-  border-radius:50%;
-  position:absolute;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
-}
-
-@keyframes spin{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
-}
-
-/* CONTENT */
-.container{
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
-}
-
-.card{
-  background:linear-gradient(145deg, #0f172a, #020617);
-  border:1px solid rgba(255,255,255,0.1);
-  padding:20px;
-  border-radius:16px;
-  margin-bottom:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  transition:0.3s;
-}
-.card{
-  border:1px solid rgba(56,189,248,0.3);
-  box-shadow:0 0 20px rgba(56,189,248,0.1);
-}
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 40px rgba(0,0,0,0.7);
-}
-/* biar beda-beda section */
-.card:nth-child(even){
-  transform:translateX(40px);
-}
-.card{
-  backdrop-filter:blur(10px);
-}
-.card:nth-child(odd){
-  transform:translateX(-20px);
-}
-  .card::before{
-  content:"";
-  display:block;
-  width:50px;
-  height:3px;
-  background:#38bdf8;
-  margin-bottom:10px;
-}
-h2{color:#aaa}
-p{margin:4px 0; line-height:1.5}
-ul,ol{margin-left:18px}
-
-iframe{
-  width:100%;
-  height:220px;
-  border:none;
-  border-radius:8px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
-  .container{
-    margin:0;
-    padding:20px;
-  }
-  .hero{
-  min-height:80vh;
-}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projek Kelompok 4</title>
+  <style>
+    :root{--bg:#050814;--bg2:#101a3f;--text:#f7f8ff;--muted:#b7c4ea;--glass:rgba(255,255,255,.08);--line:rgba(255,255,255,.14);--a:#9d7bff;--b:#64e7df;--c:#ffd66b;--shadow:0 22px 60px rgba(0,0,0,.35)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text);background:radial-gradient(circle at 20% 10%,rgba(157,123,255,.18),transparent 24%),radial-gradient(circle at 80% 20%,rgba(100,231,223,.12),transparent 26%),linear-gradient(180deg,var(--bg2),var(--bg));overflow-x:hidden}
+    .stars,.stars2{position:fixed;inset:0;z-index:-2;pointer-events:none;background-repeat:repeat;opacity:.7}.stars{background-image:radial-gradient(2px 2px at 20px 40px,#fff,transparent),radial-gradient(1px 1px at 120px 80px,#fff,transparent),radial-gradient(2px 2px at 180px 150px,#fff,transparent);background-size:220px 180px;animation:moveStars 90s linear infinite}.stars2{background-image:radial-gradient(1px 1px at 70px 100px,#fff,transparent),radial-gradient(2px 2px at 260px 60px,#fff,transparent);background-size:320px 230px;animation:twinkle 5s ease-in-out infinite}
+    @keyframes moveStars{to{transform:translateY(-180px)}}@keyframes twinkle{50%{opacity:.25}}@keyframes float{50%{transform:translateY(-14px)}}@keyframes spin{to{transform:rotate(360deg)}}
+    nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px 6vw;background:rgba(5,8,20,.62);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.brand{font-weight:900;letter-spacing:.04em}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a{padding:9px 12px;border-radius:999px;color:var(--muted);text-decoration:none}.navlinks a:hover{background:var(--glass);color:white}
+    .hero{min-height:86vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;padding:70px 6vw}.eyebrow{display:inline-flex;padding:9px 14px;border:1px solid var(--line);background:var(--glass);border-radius:999px;color:#dce5ff;margin-bottom:18px}.hero h1{font-size:clamp(2.7rem,6vw,5.8rem);line-height:.95;margin:0}.grad{background:linear-gradient(90deg,#fff,var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);line-height:1.8;font-size:1.06rem;max-width:680px}.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:800;border:1px solid var(--line);background:var(--glass);color:white}.btn.primary{background:linear-gradient(90deg,var(--a),var(--b));color:#07101d;border:0}.btn:hover{transform:translateY(-3px)}
+    .moonbox{position:relative;min-height:460px;display:grid;place-items:center}.orbit{position:absolute;width:min(80vw,430px);aspect-ratio:1;border:1px dashed rgba(255,255,255,.22);border-radius:50%;animation:spin 28s linear infinite}.orbit:before{content:"";position:absolute;top:-8px;left:50%;width:16px;height:16px;border-radius:50%;background:var(--b);box-shadow:0 0 25px var(--b)}.moon{width:min(58vw,260px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 18%,#dfe7ff 38%,#9eb2ff 100%);box-shadow:inset -28px -28px 40px rgba(17,25,65,.28),0 0 70px rgba(255,255,255,.25);animation:float 5s ease-in-out infinite}.moon:after{content:"";position:absolute}
+    section{padding:80px 6vw}.head{max-width:840px;margin:0 auto 36px;text-align:center}.head h2{font-size:clamp(2rem,4vw,3.3rem);margin:0 0 12px}.head p{color:var(--muted);line-height:1.8}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;max-width:1220px;margin:auto}.card{grid-column:span 4;background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.04));border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}.card.wide{grid-column:span 6}.card.full{grid-column:span 12}.card h3{margin:0 0 10px}.card p,.card li{color:var(--muted);line-height:1.75}.tag{display:inline-flex;color:var(--b);letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;font-weight:900;margin-bottom:10px}.member{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.05);margin-bottom:12px}.role{color:var(--c);font-size:.9rem}.steps{counter-reset:step}.step{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start;margin-bottom:18px}.step:before{counter-increment:step;content:counter(step);width:54px;height:54px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,var(--a),var(--b));color:#07101d;font-weight:900}.fact{padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.05);margin-bottom:12px}.editbox{border:1px solid rgba(255,214,107,.35);background:rgba(255,214,107,.08)} code{color:var(--c)} footer{padding:50px 6vw;text-align:center;color:var(--muted)} .reveal{opacity:0;transform:translateY(28px);transition:.7s}.reveal.on{opacity:1;transform:none}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.moonbox{order:-1;min-height:360px}.card,.card.wide{grid-column:span 12}.navlinks{display:none}.grid{gap:16px}}
+  </style>
 </head>
-
 <body>
+  <div class="stars"></div><div class="stars2"></div>
+  <nav><div class="brand">🌙 Kelompok 4</div><div class="navlinks"><a href="#judul">Judul</a><a href="#identitas">Identitas</a><a href="#alat">Alat</a><a href="#langkah">Langkah</a><a href="#video">Video</a><a href="#funfact">Fun Fact</a></div></nav>
+  <header class="hero" id="judul"><div><div class="eyebrow">Created By Kelompok 4</div><h1 id="mainTitle">Project <span class="grad">Bulan</span></h1><p id="mainSubtitle"></p><div class="btnrow"><a class="btn primary" href="#identitas">Mulai Isi</a><a class="btn" href="#langkah">Lihat Langkah</a><a class="btn" href="#edit">Cara Ubah Isi</a></div></div><div class="moonbox"><div class="orbit"></div><div class="moon"></div></div></header>
+  <section id="identitas"><div class="head reveal"><h2>Perkenalan Diri / Identitas</h2><p>Bagian ini buat nama anggota kelompok dan pembagian tugas.</p></div><div class="grid"><div class="card wide reveal"><span class="tag">Anggota</span><h3>Daftar Anggota</h3><div id="memberList"></div></div><div class="card wide reveal"><span class="tag">Info</span><h3>Identitas Project</h3><p id="identityText"></p></div></div></section>
+  <section id="alat"><div class="head reveal"><h2>Alat dan Bahan</h2><p>Isi alat/bahan bisa kamu ubah sesuai project asli.</p></div><div class="grid"><div class="card full reveal"><ul id="toolsList"></ul></div></div></section>
+  <section id="langkah"><div class="head reveal"><h2>Cara Ngerjain</h2><p>Langkah-langkah dibuat gampang diedit, tinggal tambah/kurangi daftar langkah di bagian DATA.</p></div><div class="grid"><div class="card full reveal steps" id="stepList"></div></div></section>
+  <section id="video"><div class="head reveal"><h2>Video Pembuatan</h2><p>Bagian ini buat rencana video minimal 3 menit.</p></div><div class="grid"><div class="card wide reveal"><span class="tag">Durasi</span><h3 id="videoDuration"></h3><p id="videoNote"></p></div><div class="card wide reveal"><span class="tag">Urutan Video</span><ul id="videoList"></ul></div></div></section>
+  <section id="funfact"><div class="head reveal"><h2>Fakta-Fakta tentang Bulan</h2><p>Fun fact bisa diganti sesuai benda/topik yang kamu pakai.</p></div><div class="grid"><div class="card full reveal" id="factList"></div></div></section>
+  <footer>Made With Love By Shine.</footer>
+  <script>
+    const DATA = {
+      judul: "SCRAPNOOK TIGACOR",
+      subJudul: "Website project kelompok tentang Bulan yang berisi perkenalan anggota, alat dan bahan, langkah pengerjaan, rencana video pembuatan minimal 3 menit, dan fakta-fakta unik tentang Bulan.",
+      identitas: "Project IPA / Sains. Tema: Fun Fact Bulan. Tujuan: mengenalkan Bulan sebagai satelit alami Bumi dengan tampilan yang menarik, mudah dipahami, dan cocok untuk presentasi kelompok.",
+      anggota: [
+  { nama: "Anugerah Aufa Fatih Zaki Ozam", tugas: "No Absen: 04" },
+  { nama: "Damar Pandu Mukti", tugas: "No Absen: 14" },
+  { nama: "Farrelino Zacky Arsatya", tugas: "No Absen: 17" },
+  { nama: "Laiq Athar Rama Daniswara", tugas: "No Absen: 22" },
+  { nama: "Azalia Naya Anggraeni", tugas: "No Absen: 10" },
+  { nama: "Nadine Vania Putri Riyanto", tugas: "No Absen: 26" },
+  { nama: "Qonita Zahira Hanan", tugas: "No Absen: 28" },
+  { nama: "Quinsa Yeslin Selena Mukti", tugas: "No Absen: 29" }
+],
+      alatBahan: [
+  "Gunting",
+  "Cutter",
+  "Penggaris",
+  "Kaitan binder",
+  "Lem tembak",
+  "Karton",
+  "Kertas manila",
+  "Kertas asturo",
+  "Kertas lipat",
+  "Kertas gambar",
+  "Kardus",
+  "Isian lem tembak",
+  "Lem kertas",
+  "Selotip",
+  "Double tip",
+  "Stiker hiasan",
+  "Spidol / highlighter warna-warni",
+  "Pulpen warna-warni"
+],
+      langkah: [
+        { judul: "Menentukan tema project", isi: "Kelompok memilih tema Fun Fact Bulan karena Bulan adalah benda langit yang dekat dengan Bumi dan punya banyak fakta menarik untuk dijelaskan." },
+        { judul: "Membagi tugas anggota", isi: "Setiap anggota mendapatkan bagian masing-masing supaya pengerjaan lebih cepat, misalnya pembuka, alat bahan, proses pembuatan, dan fun fact." },
+        { judul: "Mengumpulkan materi", isi: "Kelompok mencari informasi tentang Bulan, seperti pengertian Bulan, pengaruh Bulan terhadap Bumi, permukaan Bulan, gravitasi Bulan, dan fakta unik lainnya." },
+        { judul: "Menyusun isi website", isi: "Materi yang sudah dikumpulkan disusun ke dalam bagian judul, identitas anggota, alat dan bahan, cara ngerjain, video pembuatan, dan fun fact." },
+        { judul: "Membuat desain website", isi: "Website dibuat dengan tema luar angkasa agar cocok dengan topik Bulan. Warna gelap, bintang, dan gambar Bulan digunakan supaya tampilannya lebih menarik." },
+        { judul: "Memasukkan data ke file HTML", isi: "Isi project dimasukkan ke bagian DATA agar mudah diubah. Nama anggota, alat bahan, langkah, dan fun fact bisa diganti tanpa mengubah desain utama." },
+        { judul: "Mengecek hasil website", isi: "File website dibuka di browser untuk memastikan semua bagian tampil dengan rapi, tombol navigasi berfungsi, dan tidak ada teks yang kosong." },
+        { judul: "Merekam video pembuatan", isi: "Kelompok merekam proses membuka file, menjelaskan isi website, dan menunjukkan hasil akhirnya. Video dibuat minimal 3 menit sesuai ketentuan tugas." },
+        { judul: "Finishing dan pengumpulan", isi: "Setelah website dan video selesai, kelompok mengecek ulang nama anggota, isi materi, durasi video, dan tampilan akhir sebelum dikumpulkan." }
+      ],
+      video: {
+        durasi: "Minimal 3 menit",
+        catatan: "Video pembuatan berisi proses pengerjaan website dari awal sampai akhir. Usahakan suara jelas, tampilan website terlihat, dan semua anggota mendapatkan bagian bicara.",
+        urutan: [
+          "0:00 - 0:20 Pembukaan: sebutkan salam, judul project, dan tema Fun Fact Bulan",
+          "0:20 - 0:50 Perkenalan: sebutkan nama anggota kelompok dan pembagian tugas",
+          "0:50 - 1:20 Alat dan bahan: jelaskan laptop/HP, internet, browser, editor, dan aplikasi video yang digunakan",
+          "1:20 - 2:15 Proses pembuatan: tunjukkan cara menyusun isi, memasukkan data, dan mengecek tampilan website",
+          "2:15 - 2:45 Hasil akhir: tampilkan website dari bagian judul sampai fun fact",
+          "2:45 - 3:20 Fun fact: jelaskan beberapa fakta unik tentang Bulan secara singkat",
+          "3:20 - 3:30 Penutup: ucapkan terima kasih dan akhiri video"
+        ]
+      },
+   funFacts: [
+  "Bumi berputar sekitar 24 jam (23 jam 56 menit 4 detik).",
+  "Kecepatan rotasi bisa mencapai 1.670 km/jam.",
+  "Rotasi menyebabkan siang dan malam.",
+  "Bumi mengelilingi Matahari selama 365 hari 6 jam.",
+  "Kecepatan revolusi mencapai 107.000 km/jam.",
+  "Kemiringan sumbu menyebabkan musim.",
+  "Artemis II adalah misi manusia ke Bulan lagi.",
+  "Astronaut hanya mengelilingi Bulan.",
+  "Menggunakan roket Space Launch System.",
+  "Langkah menuju misi ke Mars."
+],
+    };
 
-<nav>
-  <a href="#judul">Judul</a>
-  <a href="#anggota">Anggota</a>
-  <a href="#info">Info</a>
-  <a href="#alat">Alat</a>
-  <a href="#cara">Cara</a>
-  <a href="#video">Video</a>
-  <a href="#fakta">Fun Fact</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="orbit">
-    <div class="earth"></div>
-    <div class="moon"></div>
-  </div>
-
-  <div>
-    <h1>SCRAPBOOK TIGACOR</h1>
-    <p>Rotasi dan Revolusi Bumi</p>
-  </div>
-</section>
-
-
-<div class="container">
-
-<section id="judul" class="card">
-<h2>Web</h2>
-<p>Created by kelompok 3</p>
-<p><b>SCRAPBOOK TIGACOR</b></p>
-<p>Materi: Rotasi dan revolusi bumi</p>
-</section>
-
-<section id="anggota" class="card">
-<h2>Identitas / Pengenalan</h2>
-<p>Anugerah Aufa Fatih Zaki Ozam | No Absen: 04</p>
-<p>Damar Pandu Mukti | No Absen: 14</p>
-<p>Farrelino Zacky Arsatya | No Absen: 17</p>
-<p>Laiq Athar Rama Daniswara | No Absen: 22</p>
-<p>Azalia Naya Anggraeni | No Absen: 10</p>
-<p>Nadine Vania Putri Riyanto | No Absen: 26</p>
-<p>Qonita Zahira Hanan | No Absen: 28</p>
-<p>Quinsa Yeslin Selena Mukti | No Absen: 29</p>
-</section>
-
-<section id="info" class="card">
-<h2>Info Identitas</h2>
-<p>Project IPA / Sains. Tema: Fun Fact Bulan. Tujuan: mengenalkan Bulan sebagai satelit alami Bumi dengan tampilan yang menarik, mudah dipahami, dan cocok untuk presentasi kelompok.</p>
-</section>
-
-<<section id="alat" class="card">
-  <h2>Alat dan Bahan</h2>
-
-  <h3>Alat</h3>
-  <ul>
-    <li>Gunting</li>
-    <li>Cutter</li>
-    <li>Penggaris</li>
-    <li>Kaitan binder</li>
-    <li>Lem tembak</li>
-  </ul>
-
-  <h3>Bahan</h3>
-  <ul>
-    <li>Karton</li>
-    <li>Kertas manila</li>
-    <li>Kertas asturo</li>
-    <li>Kertas lipat</li>
-    <li>Kertas gambar</li>
-    <li>Kardus</li>
-    <li>Isian lem tembak</li>
-    <li>Lem kertas</li>
-    <li>Selotip</li>
-    <li>Double tip</li>
-    <li>Stiker hiasan</li>
-    <li>Spidol / highlighter warna-warni</li>
-    <li>Pulpen warna-warni</li>
-  </ul>
-</section>
-
-<section id="cara" class="card">
-<h2>Cara Ngerjain</h2>
-<p><b>Menentukan tema project</b> – memilih tema Fun Fact Bulan</p>
-<p><b>Membagi tugas anggota</b> – pembagian kerja</p>
-<p><b>Mengumpulkan materi</b> – info tentang Bulan</p>
-<p><b>Menyusun isi website</b></p>
-<p><b>Membuat desain website</b></p>
-<p><b>Memasukkan data ke HTML</b></p>
-<p><b>Mengecek hasil website</b></p>
-<p><b>Merekam video</b></p>
-<p><b>Finishing</b></p>
-</section>
-
-<section id="video" class="card">
-<h2>Video Pembuatan</h2>
-<p>Durasi minimal 3 menit</p>
-
-<ul>
-<li>0:00 - 0:20 Pembukaan</li>
-<li>0:20 - 0:50 Perkenalan</li>
-<li>0:50 - 1:20 Alat dan bahan</li>
-<li>1:20 - 2:15 Proses</li>
-<li>2:15 - 2:45 Hasil</li>
-<li>2:45 - 3:20 Fun fact</li>
-<li>3:20 - 3:30 Penutup</li>
-</ul>
-
-<iframe src="https://drive.google.com/file/d/1ClF81mIig9uZsy1h-SAU2zBUJ898nW2u/preview" allow="autoplay"></iframe>
-</section>
-
-<section id="fakta" class="card">
-  <h2>Fun Fact Rotasi, Revolusi, dan Artemis II</h2>
-
-  <h3>🌍 Rotasi Bumi</h3>
-  <ul>
-    <li>Bumi berputar sekitar 24 jam, tepatnya 23 jam 56 menit 4 detik (hari sideris).</li>
-    <li>Kecepatan rotasi di khatulistiwa mencapai ±1.670 km/jam.</li>
-    <li>Rotasi menyebabkan terjadinya siang dan malam.</li>
-    <li>Rotasi Bumi perlahan melambat karena pengaruh gravitasi Bulan.</li>
-  </ul>
-
-  <h3>🌎 Revolusi Bumi</h3>
-  <ul>
-    <li>Bumi mengelilingi Matahari selama 365 hari 6 jam.</li>
-    <li>Tambahan 6 jam menyebabkan adanya tahun kabisat tiap 4 tahun.</li>
-    <li>Kecepatan revolusi sekitar 107.000 km/jam.</li>
-    <li>Kemiringan sumbu Bumi (23,5°) menyebabkan pergantian musim.</li>
-    <li>Orbit Bumi berbentuk elips, bukan lingkaran sempurna.</li>
-  </ul>
-
-  <h3>🚀 Artemis II</h3>
-  <ul>
-    <li>Misi manusia pertama ke sekitar Bulan sejak program Apollo.</li>
-    <li>Astronaut hanya mengelilingi Bulan tanpa mendarat.</li>
-    <li>Menggunakan roket Space Launch System dan kapsul Orion.</li>
-    <li>Bertujuan menguji kesiapan manusia kembali ke Bulan.</li>
-    <li>Menjadi langkah awal menuju misi ke Mars.</li>
-  </ul>
-
-</section>
-
-</div>
-
+    const make = (tag, cls, text) => { const el = document.createElement(tag); if (cls) el.className = cls; if (text) el.textContent = text; return el; };
+    document.getElementById('mainTitle').innerHTML = `${DATA.judul.split(' ')[0] || DATA.judul} <span class="grad">${DATA.judul.split(' ').slice(1).join(' ') || ''}</span>`;
+    document.getElementById('mainSubtitle').textContent = DATA.subJudul;
+    document.getElementById('identityText').textContent = DATA.identitas;
+    const members = document.getElementById('memberList');
+    DATA.anggota.forEach(a => { const d = make('div','member'); const n = make('strong','',a.nama); const r = make('span','role',a.tugas); d.append(n,r); members.appendChild(d); });
+    const tools = document.getElementById('toolsList'); DATA.alatBahan.forEach(x => tools.appendChild(make('li','',x)));
+    const steps = document.getElementById('stepList'); DATA.langkah.forEach(s => { const d=make('div','step'); const wrap=make('div'); wrap.append(make('h3','',s.judul), make('p','',s.isi)); d.appendChild(wrap); steps.appendChild(d); });
+    document.getElementById('videoDuration').textContent = DATA.video.durasi; document.getElementById('videoNote').textContent = DATA.video.catatan;
+    const v = document.getElementById('videoList'); DATA.video.urutan.forEach(x => v.appendChild(make('li','',x)));
+    const f = document.getElementById('factList'); DATA.funFacts.forEach((x,i)=>{ const d=make('div','fact',`${i+1}. ${x}`); f.appendChild(d); });
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href')); if(t){e.preventDefault(); t.scrollIntoView({behavior:'smooth'});}}));
+    const obs = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.15}); document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+  </script>
 </body>
 </html>
